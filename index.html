@@ -1,0 +1,728 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta
+    name="description"
+    content="NP Solutions in Albuquerque, NM provides Operations Solutions, Marketing Solutions, Locksmithing Services, and custom GitHub web apps at npsnm.com."
+  />
+  <title>NP Solutions | Operations, Marketing & Locksmithing — Albuquerque, NM</title>
+  <style>
+    :root {
+      --bg: #f4f7fb;
+      --surface: #ffffff;
+      --surface-alt: #eef2f7;
+      --text: #0f172a;
+      --muted: #475569;
+      --primary: #1e3a8a;
+      --primary-hover: #172554;
+      --accent: #0f766e;
+      --border: #dbe3ee;
+      --shadow: 0 8px 24px rgba(15, 23, 42, 0.06);
+      --radius: 14px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    .container {
+      max-width: 1140px;
+      margin: 0 auto;
+      padding: 0 1.25rem;
+    }
+
+    /* Top Bar & Header */
+    .topbar {
+      background: #0f172a;
+      color: #e2e8f0;
+      font-size: 0.85rem;
+      padding: 0.5rem 0;
+    }
+
+    .topbar-inner {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .topbar a {
+      color: #93c5fd;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .topbar a:hover {
+      text-decoration: underline;
+    }
+
+    header {
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      z-index: 20;
+    }
+
+    .nav-wrap {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+      padding: 0.9rem 0;
+    }
+
+    .brand {
+      display: flex;
+      flex-direction: column;
+      text-decoration: none;
+      color: var(--text);
+    }
+
+    .brand-name {
+      font-size: 1.3rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      color: var(--primary);
+    }
+
+    .brand-tag {
+      font-size: 0.76rem;
+      font-weight: 600;
+      color: var(--muted);
+    }
+
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: var(--text);
+      font-size: 0.93rem;
+      font-weight: 600;
+    }
+
+    nav a:hover {
+      color: var(--primary);
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.4rem;
+      padding: 0.72rem 1.25rem;
+      border-radius: 10px;
+      font-weight: 600;
+      font-size: 0.95rem;
+      text-decoration: none;
+      border: 1px solid transparent;
+      cursor: pointer;
+      transition: transform 0.12s ease, background-color 0.15s ease, border-color 0.15s ease;
+    }
+
+    .btn:active {
+      transform: translateY(1px);
+    }
+
+    .btn-primary {
+      background: var(--primary);
+      color: #ffffff;
+    }
+
+    .btn-primary:hover {
+      background: var(--primary-hover);
+    }
+
+    .btn-secondary {
+      background: var(--surface);
+      color: var(--primary);
+      border-color: var(--border);
+    }
+
+    .btn-secondary:hover {
+      border-color: var(--primary);
+      background: var(--surface-alt);
+    }
+
+    .btn-sm {
+      padding: 0.48rem 0.85rem;
+      font-size: 0.85rem;
+      border-radius: 8px;
+    }
+
+    /* Hero */
+    .hero {
+      padding: 3.75rem 0 3rem;
+      background: linear-gradient(180deg, #ffffff 0%, var(--bg) 100%);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.35fr 0.95fr;
+      gap: 2rem;
+      align-items: center;
+    }
+
+    .pill {
+      display: inline-block;
+      background: #dbeafe;
+      color: var(--primary);
+      font-weight: 700;
+      font-size: 0.8rem;
+      padding: 0.3rem 0.7rem;
+      border-radius: 999px;
+      margin-bottom: 0.9rem;
+    }
+
+    .hero h1 {
+      font-size: clamp(2rem, 4.2vw, 2.95rem);
+      line-height: 1.15;
+      letter-spacing: -0.025em;
+      margin-bottom: 1rem;
+    }
+
+    .hero p {
+      color: var(--muted);
+      font-size: 1.05rem;
+      margin-bottom: 1.5rem;
+      max-width: 60ch;
+    }
+
+    .btn-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+    }
+
+    .hero-panel {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.5rem;
+      box-shadow: var(--shadow);
+      display: grid;
+      gap: 1rem;
+    }
+
+    .hero-panel h2 {
+      font-size: 1.1rem;
+      margin-bottom: 0.25rem;
+    }
+
+    .quick-item {
+      padding: 0.85rem;
+      border-radius: 10px;
+      background: var(--surface-alt);
+      border: 1px solid var(--border);
+    }
+
+    .quick-item strong {
+      display: block;
+      font-size: 0.95rem;
+      color: var(--text);
+    }
+
+    .quick-item span {
+      font-size: 0.86rem;
+      color: var(--muted);
+    }
+
+    /* Sections */
+    section {
+      padding: 3.5rem 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .section-header {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: flex-end;
+      gap: 1rem;
+      margin-bottom: 1.75rem;
+    }
+
+    .section-header h2 {
+      font-size: clamp(1.55rem, 3vw, 2.05rem);
+      letter-spacing: -0.02em;
+      margin-bottom: 0.35rem;
+    }
+
+    .section-header p {
+      color: var(--muted);
+      max-width: 64ch;
+    }
+
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.35rem;
+    }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.45rem;
+      box-shadow: var(--shadow);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+
+    .card-badge {
+      display: inline-block;
+      align-self: flex-start;
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      padding: 0.25rem 0.6rem;
+      border-radius: 6px;
+      background: #e0f2fe;
+      color: #0369a1;
+      margin-bottom: 0.5rem;
+    }
+
+    .card-badge.teal {
+      background: #ccfbf1;
+      color: var(--accent);
+    }
+
+    .card h3 {
+      font-size: 1.2rem;
+      margin-bottom: 0.45rem;
+    }
+
+    .card p {
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .card ul {
+      margin-top: 0.75rem;
+      padding-left: 1.15rem;
+      color: var(--muted);
+      font-size: 0.92rem;
+      display: grid;
+      gap: 0.3rem;
+    }
+
+    .card-footer {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 0.75rem;
+      padding-top: 0.85rem;
+      border-top: 1px solid var(--border);
+      font-size: 0.85rem;
+      color: var(--muted);
+    }
+
+    /* Filter Buttons for Apps */
+    .filter-bar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-bottom: 1.35rem;
+    }
+
+    .filter-btn {
+      padding: 0.45rem 0.9rem;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      background: var(--surface);
+      color: var(--text);
+      font-size: 0.88rem;
+      font-weight: 600;
+      cursor: pointer;
+    }
+
+    .filter-btn.active,
+    .filter-btn:hover {
+      background: var(--primary);
+      color: #ffffff;
+      border-color: var(--primary);
+    }
+
+    /* Contact & Form */
+    form {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.5rem;
+      box-shadow: var(--shadow);
+      display: grid;
+      gap: 0.95rem;
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 0.9rem;
+    }
+
+    label {
+      display: grid;
+      gap: 0.35rem;
+      font-size: 0.9rem;
+      font-weight: 600;
+    }
+
+    input,
+    select,
+    textarea {
+      width: 100%;
+      padding: 0.7rem 0.8rem;
+      border: 1px solid #cbd5e1;
+      border-radius: 8px;
+      font: inherit;
+      color: var(--text);
+      background: #ffffff;
+    }
+
+    input:focus,
+    select:focus,
+    textarea:focus {
+      outline: 2px solid #93c5fd;
+      border-color: var(--primary);
+    }
+
+    .form-status {
+      font-size: 0.9rem;
+      color: var(--accent);
+      font-weight: 600;
+      min-height: 1.25rem;
+    }
+
+    /* Footer */
+    footer {
+      background: #0f172a;
+      color: #cbd5e1;
+      padding: 2.25rem 0;
+      font-size: 0.9rem;
+    }
+
+    .footer-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.15rem;
+    }
+
+    .footer-links a {
+      color: #e2e8f0;
+      text-decoration: none;
+    }
+
+    .footer-links a:hover {
+      text-decoration: underline;
+    }
+
+    @media (max-width: 860px) {
+      .hero-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Top Bar -->
+  <div class="topbar">
+    <div class="container topbar-inner">
+      <span>Serving Albuquerque & Central New Mexico • <strong>npsnm.com</strong></span>
+      <span>
+        Direct Line: <a id="top-phone" href="tel:+15055550199">(505) 555-0199</a>  | 
+        <a id="top-email" href="mailto:contact@npsnm.com">contact@npsnm.com</a>
+      </span>
+    </div>
+  </div>
+
+  <!-- Navigation Header -->
+  <header>
+    <div class="container nav-wrap">
+      <a class="brand" href="#top">
+        <span class="brand-name">NP Solutions</span>
+        <span class="brand-tag">Operations • Marketing • Locksmithing • Albuquerque, NM</span>
+      </a>
+      <nav aria-label="Primary Navigation">
+        <a href="#services">Services</a>
+        <a href="#apps">GitHub Apps</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+        <a class="btn btn-primary btn-sm" href="#contact">Request Service</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+    <!-- Hero -->
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <span class="pill">Albuquerque, New Mexico</span>
+          <h1>Solutions Consulting, Marketing & Locksmithing Under One Roof</h1>
+          <p>
+            NP Solutions helps Albuquerque businesses, property owners, and teams streamline operations,
+            grow through practical marketing, and handle locksmithing needs—paired with custom web tools
+            built from our GitHub repositories.
+          </p>
+          <div class="btn-group">
+            <a class="btn btn-primary" href="#contact">Request Service or Quote</a>
+            <a class="btn btn-secondary" href="#apps">Launch GitHub Apps</a>
+          </div>
+        </div>
+
+        <aside class="hero-panel" aria-label="Quick Service Overview">
+          <h2>How NP Solutions Helps</h2>
+          <div class="quick-item">
+            <strong>Operations Solutions</strong>
+            <span>Process improvements, SOPs, scheduling/workflow clarity, and operational tools.</span>
+          </div>
+          <div class="quick-item">
+            <strong>Marketing Solutions</strong>
+            <span>Local Albuquerque visibility, landing pages, lead capture, and practical campaigns.</span>
+          </div>
+          <div class="quick-item">
+            <strong>Locksmithing Services</strong>
+            <span>Commercial, residential, and automotive lock, key, and access support in ABQ.</span>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <!-- Core Business Services -->
+    <section id="services">
+      <div class="container">
+        <div class="section-header">
+          <div>
+            <h2>Core Business Services</h2>
+            <p>
+              Practical, accountable support for organizations and individuals across Albuquerque and New Mexico.
+            </p>
+          </div>
+        </div>
+
+        <div class="grid-3">
+          <article class="card">
+            <div>
+              <span class="card-badge">Operations</span>
+              <h3>Operations Solutions</h3>
+              <p>
+                Eliminate bottlenecks and bring structure to daily business execution so your team spends
+                less time firefighting and more time delivering.
+              </p>
+              <ul>
+                <li>Workflow & standard operating procedures (SOPs)</li>
+                <li>Task handoffs, checklists & reporting</li>
+                <li>Custom internal tools & process automation</li>
+              </ul>
+            </div>
+            <div class="card-footer">
+              <span>B2B & Team Workflows</span>
+              <a class="btn btn-secondary btn-sm" href="#contact" data-select-service="Operations Solutions">
+                Inquire
+              </a>
+            </div>
+          </article>
+
+          <article class="card">
+            <div>
+              <span class="card-badge teal">Marketing</span>
+              <h3>Marketing Solutions</h3>
+              <p>
+                Clear messaging and targeted local outreach designed to help Albuquerque businesses attract
+                qualified inquiries and convert interest into customers.
+              </p>
+              <ul>
+                <li>Local positioning & Albuquerque visibility</li>
+                <li>Web pages, offers & inquiry funnels</li>
+                <li>Campaign tracking & growth support</li>
+              </ul>
+            </div>
+            <div class="card-footer">
+              <span>Growth & Lead Generation</span>
+              <a class="btn btn-secondary btn-sm" href="#contact" data-select-service="Marketing Solutions">
+                Inquire
+              </a>
+            </div>
+          </article>
+
+          <article class="card">
+            <div>
+              <span class="card-badge">Locksmithing</span>
+              <h3>Locksmithing Services</h3>
+              <p>
+                Dependable lock, key, and physical access solutions for commercial spaces, homes, and
+                vehicles across the Albuquerque metro area.
+              </p>
+              <ul>
+                <li>Lockouts, rekeying & hardware upgrades</li>
+                <li>Commercial doors & access control support</li>
+                <li>Clear upfront estimates & local dispatch</li>
+              </ul>
+            </div>
+            <div class="card-footer">
+              <span>Albuquerque Metro</span>
+              <a class="btn btn-secondary btn-sm" href="#contact" data-select-service="Locksmithing Services">
+                Request Locksmith
+              </a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- GitHub Apps & Tools Hub -->
+    <section id="apps">
+      <div class="container">
+        <div class="section-header">
+          <div>
+            <h2>GitHub Apps & Web Tools</h2>
+            <p>
+              Route directly to web apps and utilities published from our GitHub repositories—whether hosted
+              on GitHub Pages or external app deployments.
+            </p>
+          </div>
+        </div>
+
+        <div class="filter-bar" role="group" aria-label="Filter apps by category">
+          <button class="filter-btn active" type="button" data-filter="all">All Apps</button>
+          <button class="filter-btn" type="button" data-filter="operations">Operations</button>
+          <button class="filter-btn" type="button" data-filter="marketing">Marketing</button>
+          <button class="filter-btn" type="button" data-filter="locksmithing">Locksmithing</button>
+        </div>
+
+        <div class="grid-3" id="apps-grid">
+          <!-- Populated dynamically from SITE_CONFIG.apps below -->
+        </div>
+      </div>
+    </section>
+
+    <!-- About & Business Details -->
+    <section id="about">
+      <div class="container">
+        <div class="section-header">
+          <div>
+            <h2>About NP Solutions</h2>
+            <p>
+              Built in Albuquerque, NM to give local businesses and property owners practical help across
+              operations, marketing, and locksmithing.
+            </p>
+          </div>
+        </div>
+
+        <div class="grid-2">
+          <div class="card">
+            <div>
+              <h3>Why Work With NP Solutions</h3>
+              <p>
+                Most providers only look at one piece of the puzzle. We combine operational discipline,
+                customer-focused marketing, and hands-on locksmithing so your business runs smoothly both
+                on paper and on the ground in Albuquerque.
+              </p>
+              <ul>
+                <li><strong>Local Accountability:</strong> Serving Albuquerque and surrounding New Mexico communities.</li>
+                <li><strong>Practical Tools:</strong> Custom apps built from our GitHub repos to simplify everyday tasks.</li>
+                <li><strong>Direct Communication:</strong> Straightforward next steps without agency runaround.</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="card">
+            <div>
+              <h3>Business & Service Information</h3>
+              <p id="about-summary">
+                Reach out by phone, email, or the service form below to confirm availability, scheduling,
+                and scope for your request.
+              </p>
+              <ul>
+                <li><strong>Primary Hub:</strong> https://npsnm.com</li>
+                <li><strong>Service Area:</strong> Albuquerque, NM & nearby New Mexico areas</li>
+                <li><strong>Hours:</strong> <span id="about-hours">Mon–Sat, 8:00 AM – 6:00 PM (Update in config)</span></li>
+                <li><strong>Phone:</strong> <span id="about-phone">(505) 555-0199</span></li>
+                <li><strong>Email:</strong> <span id="about-email">contact@npsnm.com</span></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact & Service Request -->
+    <section id="contact">
+      <div class="container">
+        <div class="section-header">
+          <div>
+            <h2>Contact & Request Service</h2>
+            <p>
+              Need operations consulting, marketing support, locksmithing in Albuquerque, or help with one
+              of our GitHub apps? Send your details below.
+            </p>
+          </div>
+        </div>
+
+        <div class="grid-2">
+          <div class="card">
+            <div>
+              <h3>Reach Us Directly</h3>
+              <p>
+                Prefer calling, texting, or emailing directly? Use the contact channels below—especially
+                helpful if you need prompt locksmithing assistance or quick scheduling.
+              </p>
+              <ul>
+                <li><strong>Phone:</strong> <a id="contact-phone-link" href="tel:+15055550199">(505) 555-0199</a></li>
+                <li><strong>Email:</strong> <a id="contact-email-link" href="mailto:contact@npsnm.com">contact@npsnm.com</a></li>
+                <li><strong>Location:</strong> Albuquerque, New Mexico</li>
+                <li><strong>Website:</strong> npsnm.com</li>
+              </ul>
+            </div>
+            <div class="card-footer">
+              <span>Include your neighborhood or cross streets for locksmithing requests.</span>
+            </div>
+          </div>
+
+          <form id="service-form" method="POST">
+            <div class="form-row">
+              <label>
+                Your Name *
+                <input type="text" name="name" required placeholder="Alex Rivera" />
